@@ -1,16 +1,17 @@
 import React from 'react'
 import "./post.css"
 import {MoreVert, ThumbUp, Favorite} from "@material-ui/icons"
+import { Users } from '../../dummyData'
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img className="postProfileImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt=""/>
-            <span className="postUsername">Safak Kocaoglu</span>
-            <span className="postDate">5 mins ago</span>
+            <img className="postProfileImg" src={Users.filter(u => u.id === post.userId)[0].profilePicture} alt=""/>
+            <span className="postUsername">{Users.filter(u => u.id === post.userId)[0].username}</span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVert/>
@@ -18,17 +19,17 @@ export default function Post() {
         </div>
       </div>
       <div className="postCenter">
-        <span className="postText">Hey! Its my first post</span>
+        <span className="postText">{post?.desc}</span>
         <img className="postImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
           <ThumbUp/>
           <Favorite/>
-          <span className="likeCounter">31 People Like it</span>
+          <span className="likeCounter">{post.like} People Like it</span>
         </div>
         <div className="postBottomRight">
-          <span className="postCommentText">9 Comments</span>
+          <span className="postCommentText">{post.comment} Comments</span>
         </div>
 
       </div>
