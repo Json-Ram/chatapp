@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./post.css"
 import {MoreVert, ThumbUp, Favorite} from "@material-ui/icons"
 import { Users } from '../../dummyData'
 
 export default function Post({post}) {
+  const [like, setLike] = useState(post.like);
+  const [isliked, setIsLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLike(isliked ? like-1 : like+1)
+    setIsLiked(!isliked)
+  }
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -24,9 +32,13 @@ export default function Post({post}) {
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
-          <ThumbUp/>
-          <Favorite/>
-          <span className="likeCounter">{post.like} People Like it</span>
+          <div onClick={likeHandler}>
+            <ThumbUp />
+          </div>
+          <div onClick={likeHandler}>
+            <Favorite />
+          </div>
+          <span className="likeCounter">{like} People Like it</span>
         </div>
         <div className="postBottomRight">
           <span className="postCommentText">{post.comment} Comments</span>
