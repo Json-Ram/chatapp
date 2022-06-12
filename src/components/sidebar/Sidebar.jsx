@@ -1,5 +1,5 @@
 import "./sidebar.css"
-import { RssFeed, School, Event, WorkOutline } from "@mui/icons-material"
+import { RssFeed, School, Event, WorkOutline, Chat, PlayCircleFilledOutlined, Group, Bookmark, HelpOutline } from "@mui/icons-material"
 
 export default function Sidebar() {
   return (
@@ -11,11 +11,23 @@ export default function Sidebar() {
             <span className="sidebarListItemText">Feed</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon"/>
+            <Chat className="sidebarIcon"/>
+            <span className="sidebarListItemText">Chats</span>
+          </li>
+          <li className="sidebarListItem">
+            <PlayCircleFilledOutlined className="sidebarIcon"/>
+            <span className="sidebarListItemText">Videos</span>
+          </li>
+          <li className="sidebarListItem">
+            <Group className="sidebarIcon"/>
+            <span className="sidebarListItemText">Groups</span>
+          </li>
+          <li className="sidebarListItem">
+            <Bookmark className="sidebarIcon"/>
             <span className="sidebarListItemText">Bookmarks</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon"/>
+            <HelpOutline className="sidebarIcon"/>
             <span className="sidebarListItemText">Questions</span>
           </li>
           <li className="sidebarListItem">
@@ -33,6 +45,90 @@ export default function Sidebar() {
         </ul>
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr"/>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
+        <ul className="sidebarFriendList">
+          <li className="sidebarFriend">
+            <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <span className="sidebarFriendName">Jane Doe</span>
+          </li>
+        </ul>
         <ul className="sidebarFriendList">
           <li className="sidebarFriend">
             <img className="sidebarFriendImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
