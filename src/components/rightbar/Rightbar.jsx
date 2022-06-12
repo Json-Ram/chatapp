@@ -1,5 +1,7 @@
-import "./rightbar.css"
-import { Cake } from "@material-ui/icons"
+import "./rightbar.css";
+import { Cake } from "@material-ui/icons";
+import { Users } from "../../dummyData";
+import Online from "../online/Online";
 
 
 export default function Rightbar() {
@@ -13,32 +15,9 @@ export default function Rightbar() {
         <img className="rightbarAd" src="" alt="ADVERTISE" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jason Ram</span>
-          </li>
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jason Ram</span>
-          </li><li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jason Ram</span>
-          </li><li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" className="rightbarProfileImg" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">Jason Ram</span>
-          </li>
+          {Users.map((u)=>(
+            <Online key={u.id} user={u}/>
+          ))}
         </ul>
       </div>
     </div>
