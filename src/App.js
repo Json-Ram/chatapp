@@ -1,9 +1,8 @@
-import Home from "./components/pages/home/Home";
-import {Person} from "@material-ui/icons";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
-    <Person/>
+    <Home/>
   );
 }
 
