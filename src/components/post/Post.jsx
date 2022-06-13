@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./post.css"
 import {MoreVert, ThumbUp, Favorite} from "@material-ui/icons"
 import { Users } from '../../dummyData'
 
 export default function Post({post}) {
+  const [like, setLike] = useState(post.like);
+  const [isliked, setIsLiked] = useState(false);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  const likeHandler = () => {
+    setLike(isliked ? like-1 : like+1)
+    setIsLiked(!isliked)
+  }
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -20,13 +29,17 @@ export default function Post({post}) {
       </div>
       <div className="postCenter">
         <span className="postText">{post?.desc}</span>
-        <img className="postImg" src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+        <img className="postImg" src={PF+post.photo} alt="" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
-          <ThumbUp/>
-          <Favorite/>
-          <span className="likeCounter">{post.like} People Like it</span>
+          <div onClick={likeHandler}>
+            <ThumbUp />
+          </div>
+          <div onClick={likeHandler}>
+            <Favorite />
+          </div>
+          <span className="likeCounter">{like} People Like it</span>
         </div>
         <div className="postBottomRight">
           <span className="postCommentText">{post.comment} Comments</span>
