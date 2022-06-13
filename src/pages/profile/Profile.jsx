@@ -6,6 +6,7 @@ import Feed from "../../components/feed/Feed"
 import "./profile.css";
 
 export default function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <>
       <Topbar/>
@@ -14,8 +15,8 @@ export default function Profile() {
       <div className="profileRight">
         <div className="profileRightTop">
           <div className="profileCover">
-            <img className="profileCoverImg" src="assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
-            <img className="profileUserImg" src="/assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" />
+            <img className="profileCoverImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
+            <img className="profileUserImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
           </div>
           <div className="profileInfo">
             <h4 className='profileInfoName'>Brandon Felty</h4>

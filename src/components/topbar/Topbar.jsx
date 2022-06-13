@@ -1,11 +1,15 @@
 import './topbar.css'
 import { Search, Person, Chat, Notifications } from '@material-ui/icons'
+import {Link} from "react-router-dom"
 
 export default function Topbar() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-      <span className="logo">ChatApp</span>
+        <Link to="/" style={{textDecoration:0}}>
+         <span className="logo">ChatApp</span>
+        </Link>
       </div>
       
       <div className="topbarCenter">
@@ -34,7 +38,7 @@ export default function Topbar() {
               <span className="topbarIconBadge">1</span>
             </div>
           </div>
-          <img src="./assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" className="topbarImg" />
+          <img src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" className="topbarImg" />
       </div>
     </div>
   )
