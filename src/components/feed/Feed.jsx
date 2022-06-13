@@ -3,18 +3,19 @@ import Share from "../share/Share"
 import Post from "../post/Post"
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { Posts } from "../../dummyData"
 
-export default function Feed() {
+
+export default function Feed({username}) {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
   const fetchPosts = async() => {
-    const res = await axios.get("posts/timeline/62a4f6b18dd36c57e967fe14")
+    const res = username ? await axios.get("/posts/profile/" + username) : await axios.get("posts/timeline/62a4f6b18dd36c57e967fe14")
     setPosts(res.data)
   };
   fetchPosts()
-  },[])
+  },[username])
+
   return (
     <div className="feed">
       <div className="feedWrapper">
