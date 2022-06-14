@@ -12,11 +12,26 @@ export default function Share() {
   const desc = useRef()
   const [file, setFile] = useState(null)
 
-  const submitHandler = async(e) => {
+  const submitHandler = async (e) => {
     e.preventDefault()
     const newPost = {
       userId: user._id,
       desc: desc.current.value
+    }
+    
+    if (file) {
+      const data = new FormData();
+      const fileName = Date.now() + file.name;
+      data.append('name', fileName);
+      data.append('file', file);
+      newPost.img = fileName;
+
+      try {
+        await axios.post('/upload', data);
+        window.location.reload()
+      }catch(err) {
+        console.log(err);
+      }
     }
 
     try {
