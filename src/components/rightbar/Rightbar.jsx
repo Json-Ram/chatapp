@@ -2,10 +2,27 @@ import "./rightbar.css";
 import { Cake } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 export default function Rightbar({user}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [friends, setFriends] = useState([])
+
+  useEffect(() => {
+    
+    const getFriends = async() => {
+      try {
+        const friendList = await axios.get('/users/friends/' + user._id)
+        setFriends(friendList.data)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getFriends();
+  },[user._id])
 
   const HomeRightBar = () => {
     return(
@@ -51,30 +68,18 @@ export default function Rightbar({user}) {
         </div>
         <h4 className="rightbarTitle">User Friends</h4>
         <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">Bohn Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">Tohn Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">Hohn Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">Lohn Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img className="rightbarFollowingImg" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" />
-            <span className="rightbarFollowingName">Pohn Carter</span>
-          </div>
+          {friends.map((friend)=> (
+            <Link to={'/profile/'+friend.username} style={{textDecoration:0}}>
+              <div className="rightbarFollowing">
+                <img 
+                  src={friend.profilePicture ? PF+friend.profilePicture : PF+"michael-dam-mEZ3PoFGs_k-unsplash.jpg"} 
+                  alt="" 
+                  className="rightbarFollowingImg" 
+                />
+                <span className="rightbarFollowingName">{friend.username}</span>
+              </div>
+            </Link>
+          ))}
         </div>
       </>
     )
