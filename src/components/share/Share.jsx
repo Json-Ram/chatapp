@@ -3,6 +3,7 @@ import {PermMedia, Label, Room, EmojiEmotions} from "@material-ui/icons"
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useRef, useState } from "react";
 import axios from "axios";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 
 export default function Share() {
@@ -49,6 +50,14 @@ export default function Share() {
           <input placeholder={"What's on your mind " + user.username + "?"} className="shareInput" ref={desc}/>
         </div>
         <hr className="shareHr"/>
+        {file && (
+          <div className="shareImgContainer">
+            <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
+            <div className="shareCancelImg" onClick={()=>setFile(null)}>
+              <CancelIcon />
+            </div>
+          </div>
+        )}
         <form className="shareBottom" onSubmit={submitHandler}>
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
