@@ -28,7 +28,6 @@ export default function Share() {
 
       try {
         await axios.post('/upload', data);
-        window.location.reload()
       }catch(err) {
         console.log(err);
       }
@@ -36,6 +35,7 @@ export default function Share() {
 
     try {
       await axios.post('/posts', newPost)
+      window.location.reload()
     } catch(err) {
 
     }
