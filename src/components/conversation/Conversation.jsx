@@ -27,7 +27,7 @@ export default function Conversation({ conversation, currentUser }) {
         src={
           user?.profilePicture
             ? PF + user.profilePicture
-            : PF + "/assets/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg"
+            : PF + "michael-dam-mEZ3PoFGs_k-unsplash.jpg"
         }
         alt=""
       />
