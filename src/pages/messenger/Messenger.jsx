@@ -9,25 +9,50 @@ import { AuthContext } from '../../context/AuthContext';
 import { io } from 'socket.io-client'
 import { useInsertionEffect } from 'react';
 
+
+
 export default function Messenger() {
   const [conversations, setConversations] = useState([]);
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [arrivalMessage, setArrivalMessage] = useState(null)
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
-  const socket = useRef(io("ws://localhost:8900"))
+  const socket = useRef()
+
+  
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900")
-  },[])
+    socket.current.on("connect_error", (err) => {
+      console.log(`connect_error due to ${err.message}`);
+    });
+    socket.current.on("getMessage", data => {
+      setArrivalMessage({
+        sender: data.senderId,
+        text: data.text,
+        createdAt: Date.now()
+      });
+    });
+   
+  },[]);
+
+  useEffect(()=> {
+    arrivalMessage && currentChat?.members.includes(arrivalMessage.sender) &&
+    setMessages(prev=> [...prev, arrivalMessage]);
+  },[arrivalMessage, currentChat])
   
   useEffect(()=> {
-    socket.current.emit("addUser", user._id)
-    socket.current.on("getUsers", users=>{
-      console.log(users)
-    })
-  },[user])
+    if (user) {
+      socket.current.emit("addUser", user._id)
+      console.log("user", user)
+      socket.current.on("getUsers", users=>{
+        console.log(users)
+      })
+    }
+    
+  },[user]);
 
   useEffect(() => {
     const getConversations = async () => {
@@ -45,7 +70,7 @@ export default function Messenger() {
     const getMessages = async () => {
 
       try {
-        const res = await axios.get('/messages/' + currentChat._id);
+        const res = await axios.get('/messages/' + currentChat?._id);
         setMessages(res.data);
         } catch(err) {
         console.log(err)
@@ -62,6 +87,14 @@ export default function Messenger() {
       conversationId: currentChat._id
     }
 
+    const receiverId = currentChat.members.find(member=> member !== user._id)
+    
+    socket.current.emit("sendMessage", {
+      senderId: user._id,
+      receiverId,
+      text: newMessage
+    })
+
     try {
       const res = await axios.post('/messages', message);
       setMessages([...messages, res.data])
@@ -74,6 +107,7 @@ export default function Messenger() {
   useEffect(()=>{
     scrollRef.current?.scrollIntoView({behavior:"smooth"})
   },[messages])
+
   
   return (
     <>
