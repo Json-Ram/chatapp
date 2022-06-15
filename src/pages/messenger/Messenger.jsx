@@ -1,11 +1,28 @@
-import React from 'react'
+import {useState, useContext, useEffect, useRef} from 'react'
 import "./messenger.css"
 import Topbar from "../../components/topbar/Topbar"
 import Conversation from '../../components/conversation/Conversation';
 import Message from '../../components/message/Message';
 import ChatOnline from '../../components/chatOnline/ChatOnline';
+import axios from "axios";
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Messenger() {
+  const [conversations, setConversations] = useState([]);
+  const [currentChat, setCurrentChat] = useState(null);
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    const getConversations = async () => {
+      try {
+        const res = await axios.get("/conversations/" + user._id);
+        setConversations(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getConversations();
+  }, [user._id]);
   return (
     <>
       <Topbar/>
@@ -13,11 +30,11 @@ export default function Messenger() {
        <div className="chatMenu">
         <div className="chatMenuWrapper">
           <input placeholder="Search for Friends" className='chatMenuInput' />
-          <Conversation/>
-          <Conversation/>
-          <Conversation/>
-          <Conversation/>
-          <Conversation/>
+          {conversations.map((c) => (
+              <div onClick={() => setCurrentChat(c)}>
+                <Conversation conversation={c} currentUser={user} />
+              </div>
+            ))}
         </div>
        </div>
        <div className="chatBox">
