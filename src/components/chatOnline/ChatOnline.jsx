@@ -1,15 +1,53 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./chatOnline.css"
 
-export default function ChatOnline() {
+export default function ChatOnline({onlineUsers, currentId, setCurrentChat}) {
+  const [friends, setFriends] = useState([]);
+  const [onlineFriends, setOnlineFriends] = useState([]);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  
+  useEffect(()=> {
+    const getFriends = async() => {
+      const res = await axios.get("/users/friends/" +currentId);
+      setFriends(res.data);
+    }
+    getFriends();
+  }, [currentId]);
+
+  useEffect(()=> {
+    setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
+  },[onlineUsers, friends]);
+
+  const handleClick = async (user) => {
+    try{
+      const res = await axios.get(
+        `/conversations/find/${currentId}/${user._id}`
+      );
+      setCurrentChat(res.data); 
+    }catch(err){
+      console.log(err);
+    }
+  }
+
   return (
     <div className="chatOnline">
-      <div className="chatOnlineFriend">
+      {onlineFriends.map((o) => (
+      <div className="chatOnlineFriend" onClick={()=> {handleClick(o)}}>
         <div className="chatOnlineImgContainer">
-          <img className="chatOnlineImg" src="/assets/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg" alt="" />
+          <img
+            className="chatOnlineImg"
+            src={
+              o?.profilePicture ? 
+                PF + o.profilePicture :
+                PF+"michael-dam-mEZ3PoFGs_k-unsplash.jpg"}
+            alt="" 
+          />
           <div className="chatOnlineBadge"></div>
         </div>
-        <span className="chatOnlineName">John Doe</span>
+        <span className="chatOnlineName">{o.username}</span>
       </div>
+      ))}
     </div>
-  )
+  );
 }
