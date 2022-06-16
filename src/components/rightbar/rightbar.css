@@ -7,7 +7,7 @@
 .rightbarWrapper {
   padding: 20px;
   border-radius: 20px;
-
+  background-color: #23272a;
 }
 
 .birthdayContainer {
@@ -57,10 +57,12 @@
 
 .rightbarInfo{
   margin-bottom: 30px;
+  background-color: #23272a;
 }
 
 .rightbarInfoItem{
   margin-bottom: 10px;
+  background-color: #23272a;
 }
 
 .rightbarInfoKey{
@@ -77,12 +79,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #23272a;
 }
 
 .rightbarFollowing{
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  background-color: #23272a;
 }
 
 .rightbarFollowingImg{
