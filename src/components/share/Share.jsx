@@ -47,7 +47,7 @@ export default function Share() {
       <div className="shareWrapper">
         <div className="shareTop">
           <img className="shareProfileImg" src={user.profilePicture ? PF+"profile/"+user.profilePicture : PF+"profile/noAvatar.png"} alt="" />
-          <input placeholder={"What's on your mind " + user.username + "?"} className="shareInput" ref={desc}/>
+          <input placeholder={"What's on your mind ?"} className="shareInput" ref={desc}/>
         </div>
         <hr className="shareHr"/>
         {file && (
@@ -62,7 +62,7 @@ export default function Share() {
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
               <PermMedia htmlColor="tomato" className="shareIcon"/>
-              <span className="shareOptionText">Photo of Video</span>
+              <span className="shareOptionText">Upload</span>
               <input style={{display:"none"}} type="file" id="file" accept=".png, .jpg, .jpeg" onChange={(e) => setFile(e.target.files[0])} />
             </label>
             <div className="shareOption">
@@ -75,7 +75,7 @@ export default function Share() {
             </div>
             <div className="shareOption">
               <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-              <span className="shareOptionText">Feelings</span>
+              <span className="shareOptionText">Reactions</span>
             </div>
           </div>
           <button className="shareButton" type="submit">Share</button>

@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
+
 export default function Topbar() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const {user} = useContext(AuthContext);
@@ -30,7 +31,7 @@ export default function Topbar() {
             <Link to={'/messenger'}>
               <div className="topbarIconItem">
               <Chat/>
-              <span className="topbarIconBadge">2</span>
+              <span className="topbarIconBadge">7</span>
             </div>
             </Link>
           </div>

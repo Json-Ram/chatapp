@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import SchoolIcon from '@mui/icons-material/School';
 
 export default function Rightbar({user}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -46,8 +47,8 @@ export default function Rightbar({user}) {
     return(
       <>
         <div className="birthdayContainer">
-          <Cake/>
-          <span className="birthdayText"><b>Jason</b> and 3 <b>other friend</b> have a birthday today</span>
+          <SchoolIcon/>
+          <span className="birthdayText"><b>Jordan</b> and 30 <b>others</b> are graduating today!</span>
         </div>
         
         <h4 className="rightbarTitle">Online Friends</h4>

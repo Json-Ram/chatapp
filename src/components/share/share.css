@@ -7,6 +7,7 @@
 
 .shareWrapper {
   padding: 10px;
+  border-radius: 20px;
 }
 
 .shareTop {
@@ -39,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 20px;
 }
 
 .shareOptions {
