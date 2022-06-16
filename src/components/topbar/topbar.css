@@ -66,7 +66,7 @@
   flex: 4;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   color: white;
   background-color: #23272a;
   margin-right: 15px;

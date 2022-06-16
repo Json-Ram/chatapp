@@ -1,5 +1,5 @@
 import "./sidebar.css"
-import { RssFeed, School, Event, WorkOutline, Chat, PlayCircleFilledOutlined, Group, Bookmark, HelpOutline } from "@mui/icons-material"
+import { RssFeed, Chat, PlayCircleFilledOutlined } from "@mui/icons-material"
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 import { Link } from 'react-router-dom';

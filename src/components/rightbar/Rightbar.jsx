@@ -1,5 +1,4 @@
 import "./rightbar.css";
-import { Add, Cake } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 import { useContext, useEffect, useState } from "react";
