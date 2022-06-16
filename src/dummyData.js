@@ -2,27 +2,17 @@ export const Users = [
   {
     id:1,
     profilePicture: "profile/p_1.jpg", 
-    username: 'Dason Ham'
+    username: 'Brandon Felty'
   },
   {
     id:2,
     profilePicture: "profile/p_2.jpg",
-    username: 'Bason Ham'
+    username: 'Cesar Santamaria'
   },
   {
     id:3,
     profilePicture: "profile/p_3.jpg",
-    username: 'Fason Ham'
-  },
-  {
-    id:4,
-    profilePicture: "profile/p_4.jpg",
-    username: 'Rason Ham'
-  },
-  {
-    id:5,
-    profilePicture: "profile/p_5.jpg",
-    username: 'Tason Ham'
+    username: 'Jason Ram'
   }
 ]
 
@@ -54,6 +44,5 @@ export const Posts = [
     like: 33,
     comment: 2
   },
-  
 ]
 

@@ -66,7 +66,7 @@ export default function Post({post}) {
           <div onClick={likeHandler}>
             <Favorite />
           </div>
-          <span className="likeCounter">{like} People Like it</span>
+          <span className="postlikeCounter">{like} People Like it</span>
         </div>
         <div className="postBottomRight">
           <span className="postCommentText">{post.comment} Comments</span>

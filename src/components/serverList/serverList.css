@@ -1,0 +1,9 @@
+.server{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #23272a;
+}
+.serverName{
+  margin-left: 20px;
+}
