@@ -2,10 +2,11 @@ import "./message.css"
 import { format } from "timeago.js"
 
 export default function Message({message,own}) {
+
   return (
     <div className={own ? "message own" : "message"} >
       <div className="messageTop">
-        <img className="messageImg" src="/assets/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg" alt="" />
+        <img className="messageImg" src={ own ? "/assets/profile/p_1.jpg" : "/assets/profile/p_2.jpg"} alt="" />
         <p className="messageText">{message.text}</p>
       </div>
       <div className="messageBottom">{format(message.createdAt)}</div>

@@ -3,6 +3,7 @@ import { Search, Person, Chat, Notifications } from '@material-ui/icons'
 import { Link } from "react-router-dom"
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
 export default function Topbar() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -12,7 +13,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{textDecoration:0}}>
-         <span className="logo">Discourse</span>
+         <span className="logo">Discourse <HeadsetMicIcon/></span>
         </Link>
       </div>
       
@@ -24,10 +25,6 @@ export default function Topbar() {
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <Link to={'/'}>
-             <span className="topbarLink">Homepage</span>
-          </Link>
-          <span className="topbarLink">Timeline</span>
         </div>
           <div className="topbarIcons">
             <Link to={'/messenger'}>
@@ -38,7 +35,7 @@ export default function Topbar() {
             </Link>
           </div>
           <Link to={`/profile/${user.username}`}>
-            <img src={user.profilePicture ? PF + user.profilePicture : `${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="" className="topbarImg" />
+            <img src={user.profilePicture ? PF + "profile/" + user.profilePicture : `${PF}profile/noAvatar.png`} alt="" className="topbarImg" />
           </Link>
       </div>
     </div>

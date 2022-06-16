@@ -96,7 +96,7 @@ export default function Rightbar({user}) {
             <Link to={'/profile/'+friend.username} style={{textDecoration:0}}>
               <div className="rightbarFollowing">
                 <img 
-                  src={friend.profilePicture ? PF+friend.profilePicture : PF+"michael-dam-mEZ3PoFGs_k-unsplash.jpg"} 
+                  src={friend.profilePicture ? PF+"profile/"+friend.profilePicture : PF+"profile/noAvatar.png"} 
                   alt="" 
                   className="rightbarFollowingImg" 
                 />

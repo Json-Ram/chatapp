@@ -2,6 +2,7 @@ import "./sidebar.css"
 import { RssFeed, School, Event, WorkOutline, Chat, PlayCircleFilledOutlined, Group, Bookmark, HelpOutline } from "@mui/icons-material"
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
+import { Link } from 'react-router-dom';
 
 
 export default function Sidebar() {
@@ -9,14 +10,25 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebarWrapper">
         <ul className="sidebarList">
-          <li className="sidebarListItem">
+          
+            <li className="sidebarListItem">
+            <Link to="/">
             <RssFeed className="sidebarIcon"/>
             <span className="sidebarListItemText">Feed</span>
+            </Link>
           </li>
+          
+          
+          
           <li className="sidebarListItem">
+            <Link to="/messenger">
             <Chat className="sidebarIcon"/>
             <span className="sidebarListItemText">Chats</span>
+            </Link>
           </li>
+          
+
+
           <li className="sidebarListItem">
             <PlayCircleFilledOutlined className="sidebarIcon"/>
             <span className="sidebarListItemText">Videos</span>
