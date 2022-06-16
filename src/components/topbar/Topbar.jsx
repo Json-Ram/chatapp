@@ -13,7 +13,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{textDecoration:0}}>
-         <span className="logo">Discourse <HeadsetMicIcon/></span>
+          <span className="logo">Discourse <HeadsetMicIcon/></span>
         </Link>
       </div>
       

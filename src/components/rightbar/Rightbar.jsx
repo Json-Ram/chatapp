@@ -49,13 +49,14 @@ export default function Rightbar({user}) {
           <Cake/>
           <span className="birthdayText"><b>Jason</b> and 3 <b>other friend</b> have a birthday today</span>
         </div>
-        <img className="rightbarAd" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="ADVERTISE" />
+        
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
           {Users.map((u)=>(
             <Online key={u.id} user={u}/>
           ))}
         </ul>
+        <img className="rightbarAd" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="ADVERTISE" />
       </>
     )
   }
