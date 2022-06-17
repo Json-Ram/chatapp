@@ -27,7 +27,7 @@ export default function Conversation({ conversation, currentUser }) {
         src={
           user?.profilePicture
             ? PF + "profile/" + user.profilePicture
-            : PF + "/profile/noAvatar.jpg"
+            : PF + "profile/noAvatar.png"
         }
         alt=""
       />

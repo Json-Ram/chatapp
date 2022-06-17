@@ -91,12 +91,25 @@
 .noConversationText {
   position: absolute;
   top: 10%;
-  font-size: 50px;
-  color: rgb(224, 220, 220);
+  font-size: 30px;
+  color: #99aab5;
   cursor: default;
   background-color: #2c2f33;
 }
 
 .convoText{
-  font-size: medium;
+  font-size: small;
+  color: #99aab5;
+  background-color: #2c2f33;
 }
+
+.convoTable {
+  background-color: #2c2f33;
+  padding: 5%;
+}
+
+.convoTable li {
+  background-color: #2c2f33;
+  padding: 1% 0;
+}
+

@@ -22,8 +22,6 @@ export default function Messenger() {
   const scrollRef = useRef();
   const socket = useRef()
 
-  
-
   useEffect(() => {
     socket.current = io("ws://localhost:8900")
     socket.current.on("connect_error", (err) => {
@@ -36,7 +34,6 @@ export default function Messenger() {
         createdAt: Date.now()
       });
     });
-   
   },[]);
 
   useEffect(()=> {
@@ -116,8 +113,8 @@ export default function Messenger() {
         <div className="chatMenu">
           <div className="chatMenuWrapper">
             <input placeholder="Find or start a conversation" className="chatMenuInput" />
-            {conversations.map((c) => (
-              <div onClick={() => setCurrentChat(c)}>
+            {conversations.map((c, i) => (
+              <div onClick={() => setCurrentChat(c)} key={i}>
                 <Conversation conversation={c} currentUser={user} />
               </div>
             ))}
@@ -128,9 +125,9 @@ export default function Messenger() {
             {currentChat ? (
               <>
                 <div className="chatBoxTop">
-                  {messages.map((m) => (
-                    <div ref={scrollRef}>
-                      <Message message={m} own={m.sender === user._id} />
+                  {messages.map((m,i) => (
+                    <div ref={scrollRef} key={i}>
+                      <Message message={m} own={m.sender === user._id} currentUser={user}/>
                     </div>
                   ))}
                 </div>
@@ -150,14 +147,15 @@ export default function Messenger() {
               <span className="noConversationText">
                 How to start a conversation<br/>
                 <span className='convoText'>
-                  1. Ask for information. A good way to start a conversation is to ask for information from the person you want to talk to.<br/>
-                  2. Pay a compliment.<br/>
-                  3. Comment on something pleasant.<br/>
-                  4. Introduce yourself.<br/>
-                  5. Offer help.<br/>
-                  6. Ask for help.<br/>
-                  7. Mention a shared experience.<br/>
-                  8. Ask an opinion.<br/>
+                  <ol className="convoTable">
+                  <li>Introduce yourself.</li>
+                  <li>Pay a compliment.</li>
+                  <li>Comment on something pleasant.</li>
+                  <li>Offer help.</li>
+                  <li>Ask for help.</li>
+                  <li>Mention a shared experience.</li>
+                  <li>Ask an opinion.</li>
+                  </ol>
                 </span>
               </span>
             )}
