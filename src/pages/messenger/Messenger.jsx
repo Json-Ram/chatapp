@@ -1,13 +1,12 @@
 import {useState, useContext, useEffect, useRef} from 'react'
-import "./messenger.css"
+import "./messenger.css";
 import Topbar from "../../components/topbar/Topbar"
 import Conversation from '../../components/conversation/Conversation';
 import Message from '../../components/message/Message';
 import ChatOnline from '../../components/chatOnline/ChatOnline';
 import axios from "axios";
 import { AuthContext } from '../../context/AuthContext';
-import { io } from 'socket.io-client'
-import { useInsertionEffect } from 'react';
+import { io } from 'socket.io-client';
 
 
 

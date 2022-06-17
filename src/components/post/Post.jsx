@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useContext} from 'react'
 import "./post.css"
-import {MoreVert, ThumbUp, Favorite} from "@material-ui/icons"
+import {MoreVert, ThumbUp } from "@material-ui/icons"
 import axios from 'axios';
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
