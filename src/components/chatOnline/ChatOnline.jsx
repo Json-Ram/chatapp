@@ -48,14 +48,7 @@ export default function ChatOnline({onlineUsers, currentId, setCurrentChat}) {
         <span className="chatOnlineName">{o.username}</span>
       </div>
       ))}
-      <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
       <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-      <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
     </div>
   );
 }

@@ -66,16 +66,6 @@ export default function Rightbar({user}) {
         <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
         <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
         <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
-
-
       </>
     )
   }
