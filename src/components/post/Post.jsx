@@ -37,6 +37,12 @@ export default function Post({post}) {
     setIsLiked(!isliked);
   }
 
+  const statusStyle = (status) => {
+    if (status) {
+      return "#1872f2"
+    } 
+  };
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -60,7 +66,7 @@ export default function Post({post}) {
       <div className="postBottom">
         <div className="postBottomLeft">
           <div onClick={likeHandler}>
-            <ThumbUp style={{fill: "#1872f2", marginRight:"10px"}} />
+            <ThumbUp style={{fill: statusStyle(isliked), marginRight:"10px"}} />
           </div>
           <span className="postlikeCounter">{like} People Like it</span>
         </div>
