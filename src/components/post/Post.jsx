@@ -16,25 +16,25 @@ export default function Post({post}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   useEffect(()=> {
-    setIsLiked([post.likes.includes(currentUser._id)])
-  },[currentUser._id, post.likes])
+    setIsLiked(post.likes.includes(currentUser._id));
+  },[currentUser._id, post.likes]);
   
   useEffect(() => {
     const fetchUser = async() => {
       const res = await axios.get(`/users?userId=${post.userId}`)
-      setUser(res.data)
+      setUser(res.data);
     }
-    fetchUser()
+    fetchUser();
   },[post.userId]);
   
-  const likeHandler = () => {
+  const likeHandler = async() => {
     try {
-      axios.put('/posts/' + post._id + '/like', {userId:currentUser._id})
-    } catch {
-
+       await axios.put('/posts/' + post._id + '/like', {userId:currentUser._id});
+    } catch(err) {
+      console.log(err);
     }
-    setLike(isliked ? like-1 : like+1)
-    setIsLiked(!isliked)
+    setLike(isliked ? like-1 : like+1);
+    setIsLiked(!isliked);
   }
 
   return (
