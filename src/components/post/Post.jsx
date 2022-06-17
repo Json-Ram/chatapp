@@ -5,8 +5,6 @@ import axios from 'axios';
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
-import { lightBlue } from '@mui/material/colors';
-
 
 
 export default function Post({post}) {

@@ -4,6 +4,9 @@ import { Link } from "react-router-dom"
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HeadphonesIcon from '@mui/icons-material/Headphones';
+import MicIcon from '@mui/icons-material/Mic';
 
 
 export default function Topbar() {
@@ -28,11 +31,14 @@ export default function Topbar() {
         <div className="topbarLinks">
         </div>
           <div className="topbarIcons">
+            <MicIcon/>
+            <HeadphonesIcon/>
+            <SettingsIcon/>
             <Link to={'/messenger'}>
               <div className="topbarIconItem">
-              <Chat/>
-              <span className="topbarIconBadge">7</span>
-            </div>
+                <Chat/>
+                <span className="topbarIconBadge">7</span>
+              </div>
             </Link>
           </div>
           <Link to={`/profile/${user.username}`}>

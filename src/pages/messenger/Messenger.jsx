@@ -116,7 +116,7 @@ export default function Messenger() {
       <div className="messenger">
         <div className="chatMenu">
           <div className="chatMenuWrapper">
-            <input placeholder="Search for friends" className="chatMenuInput" />
+            <input placeholder="Find or start a conversation" className="chatMenuInput" />
             {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)}>
                 <Conversation conversation={c} currentUser={user} />
@@ -138,7 +138,7 @@ export default function Messenger() {
                 <div className="chatBoxBottom">
                   <textarea
                     className="chatMessageInput"
-                    placeholder="write something..."
+                    placeholder="Direct message"
                     onChange={(e) => setNewMessage(e.target.value)}
                     value={newMessage}
                   ></textarea>
@@ -149,7 +149,17 @@ export default function Messenger() {
               </>
             ) : (
               <span className="noConversationText">
-                Open a conversation to start a chat.
+                How to start a conversation<br/>
+                <span className='convoText'>
+                  1. Ask for information. A good way to start a conversation is to ask for information from the person you want to talk to.<br/>
+                  2. Pay a compliment.<br/>
+                  3. Comment on something pleasant.<br/>
+                  4. Introduce yourself.<br/>
+                  5. Offer help.<br/>
+                  6. Ask for help.<br/>
+                  7. Mention a shared experience.<br/>
+                  8. Ask an opinion.<br/>
+                </span>
               </span>
             )}
           </div>

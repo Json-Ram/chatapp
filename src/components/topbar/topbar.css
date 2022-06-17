@@ -80,7 +80,7 @@
 }
 
 .topbarIcons {
-  display: flex;
+  display: flex; 
 }
 
 .topbarIcons a {
@@ -92,6 +92,7 @@
   cursor: pointer;
   position: relative;
   background-color: #23272a;
+  
 }
 
 .topbarIconItem svg{

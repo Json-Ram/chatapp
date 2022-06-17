@@ -45,6 +45,12 @@ export default function ServerList() {
             <h4 className="serverName">MDN</h4>
           </div>
         </Link>
+        <Link href="https://stackoverflow.com/" target="_blank">
+          <div className="server">
+            <Avatar alt="StackOverflow" src="/assets/servers/s_7.png" sx={{ width: 56, height: 56, backgroundColor: "#23272a" }}/>
+            <h4 className="serverName">Stack Overflow</h4>
+          </div>
+        </Link>
       </Stack>
     </>
   )
