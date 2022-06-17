@@ -50,13 +50,30 @@ export default function Rightbar({user}) {
           <span className="birthdayText"><b>Jordan</b> and 30 <b>others</b> are graduating today!</span>
         </div>
         
-        <h4 className="rightbarTitle">Online Friends</h4>
+        <h4 className="rightbarTitle">Online</h4>
         <ul className="rightbarFriendList">
           {Users.map((u)=>(
             <Online key={u.id} user={u}/>
           ))}
         </ul>
-        <img className="rightbarAd" src={`${PF}michael-dam-mEZ3PoFGs_k-unsplash.jpg`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+
+
       </>
     )
   }
@@ -70,7 +87,7 @@ export default function Rightbar({user}) {
           {followed ? <RemoveIcon /> : <AddIcon/>}
         </button>
       )}
-        <h4 className="rightbarTitle">User information</h4>
+        <h4 className="rightbarTitle">About</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">City:</span>
@@ -91,7 +108,7 @@ export default function Rightbar({user}) {
             </span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User Friends</h4>
+        <h4 className="rightbarTitle">Friends</h4>
         <div className="rightbarFollowings">
           {friends.map((friend)=> (
             <Link to={'/profile/'+friend.username} style={{textDecoration:0}}>
@@ -106,6 +123,14 @@ export default function Rightbar({user}) {
             </Link>
           ))}
         </div>
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}discourse_ad.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
+        <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />
       </>
     )
   }

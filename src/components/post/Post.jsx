@@ -5,6 +5,7 @@ import axios from 'axios';
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
+import { lightBlue } from '@mui/material/colors';
 
 
 
@@ -61,10 +62,7 @@ export default function Post({post}) {
       <div className="postBottom">
         <div className="postBottomLeft">
           <div onClick={likeHandler}>
-            <ThumbUp />
-          </div>
-          <div onClick={likeHandler}>
-            <Favorite />
+            <ThumbUp style={{fill: "#1872f2", marginRight:"10px"}} />
           </div>
           <span className="postlikeCounter">{like} People Like it</span>
         </div>

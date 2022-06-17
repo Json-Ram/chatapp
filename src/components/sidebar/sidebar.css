@@ -53,6 +53,7 @@ h4 {
 .sidebarButton:hover {
   -webkit-box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.5); 
   box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
 .sidebarHr {

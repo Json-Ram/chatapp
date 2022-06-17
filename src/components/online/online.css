@@ -23,6 +23,7 @@
 .rightbarProfileImgContainer {
   margin-right: 10px;
   position: relative;
+  background-color: #23272a;
 }
 
 .rightbarProfileImg {

@@ -13,7 +13,13 @@
 .birthdayContainer {
   display: flex;
   align-items: center;
+  background-color: #23272a;
 }
+
+.birthdayContainer svg {
+  background-color: #23272a;
+}
+
 
 .birthdayText {
   font-weight: 300;
@@ -52,7 +58,7 @@
   margin-top: 20px;
   margin-bottom: 15px;
   border-bottom: 1px white solid;
-  width: 40%;
+  width: 20%;
 }
 
 .rightbarInfo{
@@ -87,6 +93,7 @@
   flex-direction: column;
   cursor: pointer;
   background-color: #23272a;
+  padding: 10px;
 }
 
 .rightbarFollowingImg{
@@ -94,6 +101,7 @@
   height: 100px;
   object-fit: cover;
   border-radius: 5px;
+  border: 2px solid white;
 }
 
 .rightbarFollowButton{
@@ -111,6 +119,15 @@
   cursor: pointer;
 }
 
+.rightbarFollowButton svg {
+  background-color: #1872f2;
+  color: white;
+}
+
 .rightbarFollowButton:focus{
   outline: none;
+}
+
+.rightbarFollowingName {
+  color: white;
 }
