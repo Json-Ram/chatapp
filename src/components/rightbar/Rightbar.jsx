@@ -63,8 +63,6 @@ export default function Rightbar({user}) {
     }
   };
 
-  console.log("friends", friends)
-
   const HomeRightBar = () => {
     return(
       <>
