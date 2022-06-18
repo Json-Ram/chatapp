@@ -7,7 +7,7 @@ import ChatOnline from '../../components/chatOnline/ChatOnline';
 import axios from "axios";
 import { AuthContext } from '../../context/AuthContext';
 import { io } from 'socket.io-client';
-
+import TextField from '@mui/material/TextField';
 
 
 export default function Messenger() {
@@ -132,12 +132,13 @@ export default function Messenger() {
                   ))}
                 </div>
                 <div className="chatBoxBottom">
-                  <textarea
+                  <TextField 
+                    id="standard-basic" 
+                    variant="standard"
                     className="chatMessageInput"
                     placeholder="Direct message"
                     onChange={(e) => setNewMessage(e.target.value)}
-                    value={newMessage}
-                  ></textarea>
+                    value={newMessage}/>
                   <button className="chatSubmitButton" onClick={handleSubmit}>
                     Send
                   </button>
