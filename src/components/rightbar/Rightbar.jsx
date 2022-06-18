@@ -1,5 +1,4 @@
 import "./rightbar.css";
-import { Users } from "../../dummyData";
 import Online from "../online/Online";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -35,6 +34,20 @@ export default function Rightbar({user}) {
     getFriends();
   },[user?._id, user]);
 
+  useEffect(() => {
+    const getFriends = async() => {
+      if(currentUser) {
+        try {
+          const friendList = await axios.get('/users/friends/' + currentUser._id)
+          setFriends(friendList.data)
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    };
+    getFriends();
+  },[currentUser]);
+
   const handleClick = async() => {
     try{
       if(followed) {
@@ -50,6 +63,8 @@ export default function Rightbar({user}) {
     }
   };
 
+  console.log("friends", friends)
+
   const HomeRightBar = () => {
     return(
       <>
@@ -60,8 +75,8 @@ export default function Rightbar({user}) {
         
         <h4 className="rightbarTitle">Online</h4>
         <ul className="rightbarFriendList">
-          {Users.map((u)=>(
-            <Online key={u.id} user={u}/>
+          {friends.map((u)=>(
+            <Online key={u._id} user={u}/>
           ))}
         </ul>
         <img className="rightbarAd" src={`${PF}nitro.png`} alt="ADVERTISE" />

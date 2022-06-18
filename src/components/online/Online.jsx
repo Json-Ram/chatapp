@@ -6,7 +6,12 @@ export default function Online({user}) {
   return (
     <li className="rightbarFriend">
      <div className="rightbarProfileImgContainer">
-       <img src={PF+user.profilePicture} alt="" className="rightbarProfileImg" />
+       <img src=
+       { user ? 
+          PF+"profile/"+user.profilePicture :
+          PF+"profile/noAvatar.png"
+       } 
+       alt="" className="rightbarProfileImg" />
        <span className="rightbarOnline"></span>
      </div>
      <span className="rightbarUsername">{user.username}</span>
