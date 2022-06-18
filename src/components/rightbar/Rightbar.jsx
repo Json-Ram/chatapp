@@ -8,12 +8,14 @@ import { AuthContext } from "../../context/AuthContext";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import SchoolIcon from '@mui/icons-material/School';
+import Skeleton from '@mui/material/Skeleton';
 
 export default function Rightbar({user}) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [friends, setFriends] = useState([]);
   const {user:currentUser, dispatch} = useContext(AuthContext);
   const [followed, setFollowed] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setFollowed(currentUser.following.includes(user?._id))
@@ -74,15 +76,29 @@ export default function Rightbar({user}) {
     )
   }
 
+  useEffect(() => {
+    const loadingFunc = () => {
+      setLoading(false)
+    }
+    setTimeout(loadingFunc, 500)
+  }, [user])
+
   const ProfileRightBar = () => {
     return(
       <>
-      {user.username !== currentUser.username && (
-        <button className="rightbarFollowButton" onClick={handleClick}>
-          {followed ? "Unfollow" : "Follow"}
-          {followed ? <RemoveIcon /> : <AddIcon/>}
-        </button>
-      )}
+      { 
+        loading ? (<Skeleton variant="rectangular" width={100} height={50} />)
+        : (
+          (
+          user.username !== currentUser.username && (
+            <button className="rightbarFollowButton" onClick={handleClick}>
+              {followed ? "Unfollow" : "Follow"}
+              {followed ? <RemoveIcon /> : <AddIcon/>}
+            </button>
+          )
+          ) 
+        )
+      }
         <h4 className="rightbarTitle">About</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
