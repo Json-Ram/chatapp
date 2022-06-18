@@ -5,6 +5,7 @@ import axios from 'axios';
 import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext';
+import DeletePost from '../longMenu/LongMenu';
 
 
 export default function Post({post}) {
@@ -55,7 +56,7 @@ export default function Post({post}) {
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
-            <MoreVert/>
+            <DeletePost post={post}/>
           </div>
         </div>
       </div>

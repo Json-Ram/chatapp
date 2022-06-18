@@ -84,6 +84,10 @@
   color: var(--secondary);
 }
 
+.shareButton:hover {
+  background-color: #23272ac8;
+}
+
 .shareImgContainer{
   padding: 0 20px 10px 20px;
   position: relative;

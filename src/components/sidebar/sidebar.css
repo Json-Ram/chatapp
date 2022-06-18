@@ -29,6 +29,20 @@ h4 {
   background-color: #23272a;
 }
 
+.sidebarListItem a:visited {
+  text-decoration: none;
+}
+
+.sidebarListItem a:link {
+  text-decoration: none;
+}
+
+.sidebarListItem a:hover {
+  color: #23272a;
+}
+
+
+
 .sidebarListItem {
   display: flex;
   align-items: center;
@@ -66,5 +80,6 @@ h4 {
   margin: 0;
   list-style: none;
 }
+
 
 

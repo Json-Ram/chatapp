@@ -16,7 +16,6 @@
 }
 
 .chatMenuInput:focus {
-  border: 2px solid white;
   outline: none;
 }
 
@@ -95,6 +94,7 @@
   color: #99aab5;
   cursor: default;
   background-color: #2c2f33;
+  padding-left: 15px;
 }
 
 .convoText{
