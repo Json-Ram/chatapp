@@ -17,7 +17,7 @@ export default function Rightbar({user}) {
 
   useEffect(() => {
     setFollowed(currentUser.following.includes(user?._id))
-  }, [followed, currentUser.following]);
+  }, [followed, currentUser.following, user]);
 
   useEffect(() => {
     const getFriends = async() => {
