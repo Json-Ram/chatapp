@@ -20,7 +20,7 @@ export default function Message({message,own}) {
       }
     };
     getConversation();
-  }, [user._Id, message.conversationId]);
+  }, [user._id, message.conversationId]);
 
   useEffect(() => {
     if (conversation) {
