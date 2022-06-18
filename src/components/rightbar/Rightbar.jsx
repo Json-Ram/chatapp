@@ -105,7 +105,7 @@ export default function Rightbar({user}) {
           (
           user.username !== currentUser.username && (
             <button className="rightbarFollowButton" onClick={handleClick}>
-              {followed ? "Unfollow" : "Follow"}
+              {followed ? "Unfriend" : "Send Friend Request"}
               {followed ? <RemoveIcon /> : <AddIcon/>}
             </button>
           )

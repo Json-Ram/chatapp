@@ -18,7 +18,7 @@ export default function Feed({username}) {
     }))
   };
   fetchPosts()
-  },[username, user._id])
+  },[username, user._id, posts])
 
   return (
     <div className="feed">

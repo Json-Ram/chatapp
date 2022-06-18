@@ -1,3 +1,8 @@
-.longMenu{
-  background: transparent;
+.postDelete{
+  z-index: 999;
+  display: contents;
+}
+
+.postDelete:hover{
+  display: contents;
 }

@@ -1,20 +1,13 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-import DoneIcon from '@mui/icons-material/Done';
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
-
+import "./longMenu.css"
 
 export default function DeletePost({post}) {
-  const {user} = useContext(AuthContext)
-
-
-  const handleClick = () => {
-    console.info('Are you sure you want to delete this post?');
-  };
+  const {user} = useContext(AuthContext);
 
   const handleDelete = async() => {
     console.info('Post Deleted');
@@ -27,14 +20,11 @@ export default function DeletePost({post}) {
   };
 
   return (
-    <Stack direction="row" spacing={1}>
+    <div className='postDelete'>
       <Chip
-        label="Delete Post"
-        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<DeleteIcon />}
-        variant="outlined"
       />
-    </Stack>
+    </div>
   );
 }

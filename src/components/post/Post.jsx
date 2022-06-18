@@ -56,7 +56,7 @@ export default function Post({post}) {
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
-            <DeletePost post={post}/>
+            { (post.userId !== currentUser._id) ? <MoreVert/> : <DeletePost post={post}/>}
           </div>
         </div>
       </div>
@@ -74,7 +74,6 @@ export default function Post({post}) {
         <div className="postBottomRight">
           <span className="postCommentText">{post.comment} Comments</span>
         </div>
-
       </div>
     </div>
   )
