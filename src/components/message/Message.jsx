@@ -35,12 +35,18 @@ export default function Message({message,own}) {
       };
       getUser();
     }
-  }, [conversation, user._Id]);
+  }, [conversation, user._id]);
 
   return (
     <div className={own ? "message own" : "message"} >
       <div className="messageTop">
-        <img className="messageImg" src={ own ? PF + "profile/" + user.profilePicture : PF + "profile/" + friend.profilePicture} alt="" />
+        <img className="messageImg" src={ 
+          own ? 
+          PF + "profile/" + user.profilePicture : 
+          friend ? 
+            PF + "profile/" + friend.profilePicture :
+            PF + "profile/noAvatar.png"} alt="" 
+        />
         <p className="messageText">{message.text}</p>
       </div>
       <div className="messageBottom">{format(message.createdAt)}</div>
